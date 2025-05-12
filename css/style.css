@@ -1,0 +1,1517 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ff4655;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Tab Styles */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    background-color: #3a3a3a;
+}
+
+.tab-button.active {
+    background-color: #ff4655;
+}
+
+.tab-content {
+    display: none;
+    position: relative;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Shop Styles */
+.shop-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+}
+
+.match-setup {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.setup-section {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.setup-section h3 {
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+select option {
+    padding: 8px;
+    background-color: #444;
+    color: #fff;
+}
+
+select option:first-child {
+    color: #888;
+}
+
+/* Star rating colors in dropdown */
+select option .star {
+    color: #ffd700;
+}
+
+select option .empty-star {
+    color: #666;
+}
+
+.perk-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.perk-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.perk-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.addon-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Rank Progress Styles */
+.rank-progress {
+    background-color: #2a2a2a;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.rank-display {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.rank {
+    text-align: center;
+    flex: 1;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 0 0.5rem;
+}
+
+.rank-name {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.rank-levels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rank-level {
+    padding: 0.5rem;
+    background-color: #333;
+    border-radius: 3px;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rank-level.current {
+    opacity: 1;
+    background-color: #ff4655;
+}
+
+.level-number {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.pip-progress {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: center;
+}
+
+.pip {
+    width: 8px;
+    height: 8px;
+    background-color: #444;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.pip.active {
+    background-color: #ffd700;
+}
+
+.pip.iri-1 {
+    width: auto;
+    padding: 0 0.5rem;
+    background-color: #ff4655;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 3px;
+}
+
+.ash {
+    background-color: #808080;
+}
+
+.silver {
+    background-color: #c0c0c0;
+}
+
+.gold {
+    background-color: #ffd700;
+}
+
+.iri {
+    background-color: #ff4655;
+}
+
+/* Match History Styles */
+.match-history {
+    background-color: #2a2a2a;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.match-list {
+    margin-top: 1rem;
+}
+
+/* Existing Styles */
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #ff4655;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.mode-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.survivor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.survivor-card {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: default;
+}
+
+.survivor-card .life-btn {
+    pointer-events: auto;
+}
+
+.survivor-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.survivor-card.eliminated {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+.survivor-card.eliminated:not(.revived)::after {
+    content: "ELIMINATED";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff4655;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.survivor-card.revived {
+    opacity: 1;
+    filter: none;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.survivor-card.revived::before {
+    content: 'Revived';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Add a tooltip for eliminated survivors */
+.survivor-card.eliminated:not(.revived):hover::before {
+    content: 'Right-click to revive';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 3;
+}
+
+.survivor-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff4655;
+    position: relative;
+}
+
+.survivor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 15px;
+    transform: scale(1.4);
+}
+
+.survivor-image img[src^="data:image/svg+xml"] {
+    object-position: center;
+    transform: none;
+}
+
+.survivor-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: #ffffff;
+}
+
+.lives {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.life-display {
+    display: flex;
+    gap: 5px;
+}
+
+.life {
+    color: #333;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    pointer-events: none;
+}
+
+.life.active {
+    color: #ff4444;
+}
+
+.survivor-card.eliminated .life {
+    color: #333;
+}
+
+.life-btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.life-btn:hover {
+    background-color: #555;
+}
+
+.survivor-card.eliminated .life-btn {
+    background-color: #333;
+    cursor: default;
+}
+
+.survivor-card.eliminated .life-btn:hover {
+    background-color: #333;
+}
+
+.perks {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Perk Slot Styles */
+.perk-slot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.perk-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.perk-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.perk-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.perk-name {
+    font-size: 0.9rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: -0.2rem;
+}
+
+.perk-slot input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.perk-slot input:focus {
+    outline: none;
+    border-color: #ff4655;
+}
+
+.perk-rating {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.perk-rating .stars {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.perk-rating .star {
+    color: #444;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.perk-rating .star.active {
+    color: #ffd700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+.survivor-rating {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.survivor-rating .stars {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.survivor-rating .star {
+    color: #666;
+    font-size: 16px;
+}
+
+.survivor-rating .star.active {
+    color: #ffd700;
+}
+
+.rating-value {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* Remove hover effects since stars are no longer interactive */
+.star:hover {
+    color: inherit;
+}
+
+.addon-slot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.addon-slot label {
+    font-weight: bold;
+    color: #ff4655;
+}
+
+.addon-rarity option {
+    padding: 0.5rem;
+}
+
+.addon-rarity option.rarity-common {
+    color: #8B4513;
+}
+
+.addon-rarity option.rarity-uncommon {
+    color: #228B22;
+}
+
+.addon-rarity option.rarity-rare {
+    color: #1E90FF;
+}
+
+.addon-rarity option.rarity-very-rare {
+    color: #9370DB;
+}
+
+.addon-rarity option.rarity-visceral {
+    color: #FF0000;
+}
+
+/* Add rarity colors to the select when an option is selected */
+.addon-rarity[value="common"] {
+    color: #8B4513;
+}
+
+.addon-rarity[value="uncommon"] {
+    color: #228B22;
+}
+
+.addon-rarity[value="rare"] {
+    color: #1E90FF;
+}
+
+.addon-rarity[value="very-rare"] {
+    color: #9370DB;
+}
+
+.addon-rarity[value="visceral"] {
+    color: #FF0000;
+}
+
+@media (max-width: 768px) {
+    .survivor-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .survivor-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .rank-display {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .rank {
+        margin: 0;
+    }
+
+    .perk-slot {
+        padding: 0.3rem;
+    }
+    
+    .perk-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .perk-name {
+        font-size: 0.8rem;
+    }
+
+    .perk-rating .star {
+        font-size: 1rem;
+    }
+}
+
+.offering-selection {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.offering-slot {
+    width: 100%;
+    max-width: 300px;
+}
+
+.offering-slot select {
+    width: 100%;
+}
+
+.offering-slot label {
+    font-weight: bold;
+    color: #ff4655;
+}
+
+.offering-rarity option {
+    padding: 0.5rem;
+}
+
+.offering-rarity option.rarity-common {
+    color: #8B4513;
+}
+
+.offering-rarity option.rarity-uncommon {
+    color: #228B22;
+}
+
+.offering-rarity option.rarity-rare {
+    color: #1E90FF;
+}
+
+.offering-rarity option.rarity-very-rare {
+    color: #9370DB;
+}
+
+.offering-rarity option.rarity-visceral {
+    color: #FF0000;
+}
+
+/* Add rarity colors to the select when an option is selected */
+.offering-rarity[value="common"] {
+    color: #8B4513;
+}
+
+.offering-rarity[value="uncommon"] {
+    color: #228B22;
+}
+
+.offering-rarity[value="rare"] {
+    color: #1E90FF;
+}
+
+.offering-rarity[value="very-rare"] {
+    color: #9370DB;
+}
+
+.offering-rarity[value="visceral"] {
+    color: #FF0000;
+}
+
+@media (max-width: 768px) {
+    .offering-selection {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Match Results Styles */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.counter-btn {
+    background-color: #444;
+    border: none;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.counter-btn:hover {
+    background-color: #555;
+}
+
+.counter input {
+    width: 60px;
+    text-align: center;
+    background-color: #333;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.match-summary {
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.match-summary h4 {
+    color: #ff4655;
+    margin-bottom: 1rem;
+}
+
+.summary-content {
+    display: grid;
+    gap: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.summary-item.total {
+    background-color: #ff4655;
+    font-weight: bold;
+}
+
+.save-match-btn {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.save-match-btn:hover {
+    background-color: #ffed4a;
+}
+
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Match History Enhanced Styles */
+.progress-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background-color: #333;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.progress-item {
+    text-align: center;
+    padding: 1rem;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.progress-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #ff4655;
+    margin-bottom: 0.5rem;
+}
+
+.progress-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.match-filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.match-filters select {
+    flex: 1;
+    padding: 0.8rem;
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.match-entry {
+    background-color: #333;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.match-entry:hover {
+    transform: translateX(5px);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #444;
+}
+
+.match-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.match-survivor {
+    font-weight: bold;
+}
+
+.match-result {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.match-result.escaped {
+    background-color: #28a745;
+}
+
+.match-result.died {
+    background-color: #dc3545;
+}
+
+.match-details {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.match-stats {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.match-stats span {
+    color: #888;
+}
+
+.match-earnings {
+    text-align: right;
+}
+
+.earnings-label {
+    color: #888;
+    margin-right: 0.5rem;
+}
+
+.earnings-value {
+    font-weight: bold;
+    color: #ff4655;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pagination-btn {
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background-color: #555;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#page-info {
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .progress-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .pip-progress {
+        gap: 0.2rem;
+    }
+    
+    .pip {
+        width: 6px;
+        height: 6px;
+    }
+
+    .match-filters {
+        flex-direction: column;
+    }
+
+    .match-details {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .match-stats {
+        justify-content: center;
+    }
+
+    .match-earnings {
+        text-align: center;
+    }
+}
+
+/* Data Management Styles */
+.data-management {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.data-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.export-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.export-btn:hover {
+    background-color: #218838;
+}
+
+.import-btn {
+    background-color: #17a2b8;
+    color: white;
+    cursor: pointer;
+}
+
+.import-btn:hover {
+    background-color: #138496;
+}
+
+@media (max-width: 768px) {
+    .data-management {
+        flex-direction: column;
+    }
+}
+
+/* Credits Page Styles */
+.credits-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+}
+
+.credits-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #333;
+    border-radius: 8px;
+}
+
+.credits-section h3 {
+    color: #ff4655;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.credit-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.credit-item:last-child {
+    margin-bottom: 0;
+}
+
+.credit-item h4 {
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.credit-item p {
+    color: #fff;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.credits-section p {
+    color: #fff;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .credits-container {
+        padding: 1rem;
+    }
+
+    .credits-section {
+        padding: 1rem;
+    }
+
+    .credit-item {
+        padding: 0.8rem;
+    }
+}
+
+/* Match Tracking Styles */
+.match-tracking {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.current-match {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.current-match h2 {
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Add styles for the close button */
+.close-match-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #ffd700;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.close-match-btn:hover {
+    color: #ff4444;
+}
+
+/* Add styles for the match results section */
+.match-results {
+    grid-column: 1 / -1;
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #444;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: #ffd700;
+}
+
+.toggle-switch input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Match Options Styles */
+.match-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.option-item {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.option-title {
+    font-weight: bold;
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.option-description {
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.revival-note, .tunnel-note {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-note {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .option-description, .revival-note, .tunnel-note, .result-note {
+        font-size: 0.8rem;
+    }
+}
+
+/* Revival Section Styles */
+.revival-cost {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #333;
+    border-radius: 4px;
+    text-align: center;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+#revival-cost-amount {
+    color: #ff4655;
+}
+
+/* Tunnel Insurance Styles */
+.tunnel-status {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.cooldown-info, .insurance-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #444;
+    border-radius: 4px;
+}
+
+.cooldown-info span:last-child {
+    color: #ff4655;
+    font-weight: bold;
+}
+
+.insurance-info span:last-child {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Toggle Switch Styles for Options */
+.option-item .toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.option-item .toggle-switch input:checked + .slider {
+    background-color: #28a745;
+}
+
+.toggle-switch.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.toggle-switch.disabled .slider {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
+.toggle-switch.disabled input:checked + .slider {
+    background-color: #666;
+}
+
+@media (max-width: 768px) {
+    .match-options {
+        gap: 0.5rem;
+    }
+
+    .option-item {
+        padding: 0.8rem;
+    }
+
+    .tunnel-status {
+        padding: 0.8rem;
+    }
+}
+
+.reset-card-btn {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #444;
+    color: #ffd700;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s, color 0.2s;
+}
+.reset-card-btn:hover {
+    background: #ffd700;
+    color: #222;
+}
+
+.survivor-card.perma-eliminated {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    cursor: not-allowed;
+    border: 2px solid #b71c1c;
+    position: relative;
+}
+.survivor-card.perma-eliminated::after {
+    content: "PERMANENTLY ELIMINATED";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-8deg);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #b71c1c;
+    background: rgba(0,0,0,0.85);
+    padding: 8px 18px;
+    border-radius: 8px;
+    z-index: 2;
+    letter-spacing: 1px;
+}
+.survivor-card.perma-eliminated:hover::before,
+.survivor-card.perma-eliminated .revived::before,
+.survivor-card.perma-eliminated .eliminated::after {
+    display: none !important;
+    content: none !important;
+}
+.survivor-card.perma-eliminated .reset-card-btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.perk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.option-title.disabled {
+    color: #666;
+}
+
+/* Style for disabled options in survivor select */
+#survivor-select option:disabled {
+    text-decoration: line-through;
+    color: #999;
+    font-style: italic;
+}
+
+/* --- Responsive summary bar for match tracking --- */
+.summary-bar {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.summary-item {
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 15px 20px;
+    text-align: center;
+    flex: 1 1 160px;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.summary-label {
+    color: #ccc;
+    font-size: 0.95em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.summary-value {
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.bank-balance .summary-label {
+    color: #ffd700;
+}
+.bank-balance .summary-value {
+    color: #4caf50;
+    font-size: 1.5em;
+}
+.bank-balance {
+    border: 2px solid #ffd700;
+    background: #222;
+}
+@media (max-width: 900px) {
+    .summary-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+} 
